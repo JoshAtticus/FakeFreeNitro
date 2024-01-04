@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitro Promotion Codes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function redirectBasedOnOS() {
+            setTimeout(function() {
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                    window.location.replace("https://www.youtube.com/watch?v=xvFZjo5PgG0");
+                    return;
+                }
+
+                if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('WIN') >= 0) {
+                    window.location.replace("discord://-/settings/linux");
+                    return;
+                }
+
+                if (navigator.platform.toUpperCase().indexOf('LINUX') >= 0) {
+                    window.location.replace("discord://-/settings/windows");
+                    return;
+                }
+            }, 3000);
+        }
+    </script>
+</head>
+<body onload="redirectBasedOnOS()">
+    <h1>Click the Open in Discord button when it appears</h1>
+</body>
+</html>
