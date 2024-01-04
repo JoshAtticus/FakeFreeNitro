@@ -22,14 +22,14 @@
     </style>
     <script>
         function redirectBasedOnOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                document.getElementById('welcome-message').textContent = "Sorry, you need to be on desktop for this to work ";
+                return;
+            }
+            
             setTimeout(function() {
-                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-                if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
-                    window.location.replace("https://www.youtube.com/watch?v=xvFZjo5PgG0");
-                    return;
-                }
-
                 if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('WIN') >= 0) {
                     window.location.replace("discord://-/settings/linux");
                     return;
